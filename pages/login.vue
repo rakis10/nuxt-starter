@@ -1,0 +1,4 @@
+<template>
+  <LoginNext />
+</template>
+

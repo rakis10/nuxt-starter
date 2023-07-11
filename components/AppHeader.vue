@@ -19,14 +19,45 @@ const logout = async () => {
   <div>
     <Title>Nuxt 3 x Supabase</Title>
     <div class="flex items-center md:justify-between justify-center">
-      <div class="hidden md:block">
-        <UButton
-          label="Hosted on Netlify"
+      <div class="hidden md:block ms-5">
+        <!--        <UButton-->
+        <!--          label="Tasks"-->
+        <!--          variant="transparent"-->
+        <!--          to="/tasks"-->
+        <!--        />-->
+        <NuxtLink
           variant="transparent"
-          target="_blank"
-          to="https://netlify.com"
-          icon="i-heroicons-outline-external-link"
-        />
+          to="/blogs"
+        >
+          Blog
+        </NuxtLink>
+        <NuxtLink
+          variant="transparent"
+          to="/story"
+        >
+          Story
+        </NuxtLink>
+        <NuxtLink
+          variant="transparent"
+          to="/tasks"
+          class="ms-5"
+        >
+          Tasks
+        </NuxtLink>
+        <NuxtLink
+          variant="transparent"
+          to="/register"
+          class="ms-5"
+        >
+          Register
+        </NuxtLink>
+        <NuxtLink
+          variant="transparent"
+          to="/login"
+          class="ms-5"
+        >
+          Login
+        </NuxtLink>
       </div>
       <div class="flex items-center">
         <UButton
