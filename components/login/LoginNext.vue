@@ -35,6 +35,7 @@
           <button
             type="submit"
             class="btn btn-primary"
+            @click="loginSubmit"
           >
             Login
           </button>
@@ -54,7 +55,30 @@
 const email = ref()
 const password = ref()
 
+// const toast = useToast();
+const client = useSupabaseClient();
+const user = useSupabaseUser();
 
+async function loginSubmit(){
+  // const { error} = await client.auth.signInWithOtp({
+  //   email: email.value
+  // })
+  const {data, error} = await client.auth.signInWithPassword({
+    email: email.value,
+    password: password.value,
+  })
+  // console.log(data)
+  console.log(error)
+  // $nt.show('qwe')
+  // toast.error({title: 'Error creating user'})
+}
+onMounted(()=>{
+  watchEffect(()=>{
+    if (user.value){
+      navigateTo('/blogs')
+    }
+  })
+})
 </script>
 
 <style>

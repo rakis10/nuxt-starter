@@ -22,8 +22,8 @@ async function addBlog() {
   getBlogs()
 }
 
-async function getBlogs() {
-  const {data: lol} = await $fetch('/api/blogs/')
+async function  getBlogs() {
+  // const {data: lol} = await $fetch('/api/blogs/')
 
   // blog.value = lol
   // console.log(lol)
@@ -36,7 +36,8 @@ onMounted(() => {
 
 <template>
   <div class="mt-10">
-    <LoginNext />
+    <!--    <LoginNext />-->
+    <h1>Blogs</h1>
     <div class="card w-96 bg-base-100 shadow-xl">
       <form
         class=" gap-2 my-2"

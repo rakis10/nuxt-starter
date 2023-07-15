@@ -3,8 +3,9 @@ export default defineNuxtConfig({
     '@nuxtjs/supabase',
     '@nuxthq/ui',
     // https://github.com/nuxt-modules/color-mode
+    '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
-    '@nuxtjs/tailwindcss'
+    '@cssninja/nuxt-toaster'
   ],
   supabase:{
     url: 'https://ddxhvnetcjxgqlfzjagi.supabase.co',

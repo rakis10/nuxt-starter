@@ -64,15 +64,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import {ref} from 'vue';
 
 const client = useSupabaseClient();
+const toast = useToast();
 const name = ref('');
 const email = ref('');
 const password = ref('');
 
 const register = async () => {
-  const { data, error } = await client.auth.signUp({
+  const {data, error} = await client.auth.signUp({
     email: 'example@email.com',
     password: 'example-password',
     options: {
@@ -81,8 +82,10 @@ const register = async () => {
       }
     }
   })
-  if (error){
-
+  if (error) {
+    toast.error({title: 'Error creating user'})
+  }else{
+    toast.success({title: 'User created succesfully'})
   }
 };
 </script>
